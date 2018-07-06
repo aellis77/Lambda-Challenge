@@ -7,6 +7,7 @@ After writing your function uncomment the matching function reference at the bot
 // 1. Write a function called helloWorld that returns the string 'Hello World!'.
 
 function helloWorld() {
+  return 'Hello World!';
 
 }
 
@@ -23,8 +24,23 @@ function helloWorld() {
              lambdaSchool(8); // returns 8
 */
 
-function lambdaSchool() {
+function lambdaSchool(num) {
+  let output = ' ';
 
+  if (num > 0) { // positive integer
+    if ((num % 3 === 0) && (num % 5 === 0))  {
+      output = 'Lambda School';
+    } else if (num % 3 === 0) {
+      output = 'Lambda';
+    } else if (num % 5 === 0) {
+      output = 'School';
+    } else {
+      output = String(num);
+    }
+  } else {
+    output = 'Not a valid input';
+  }
+  return output;
 }
 
 /*
@@ -38,8 +54,16 @@ function lambdaSchool() {
              longestString(['JavaScript', 'HTML', 'CSS']); // returns 'JavaScript'
 */
 
-function longestString() {
+function longestString(strs) {
+  let longestStringInArray = ' ';
 
+  // if one searchs for >, the first string at that length will be maintained
+  for (let i=0; i < strs.length; i++) {
+    if (strs[i].length > longestStringInArray.length) {
+      longestStringInArray = strs[i];
+    } 
+  }
+  return longestStringInArray;   
 }
 
 /*
@@ -63,8 +87,20 @@ function longestString() {
              computeUserAverageAge(users); // returns 62 (This number is rounded up from 61.6666)
 */
 
-function computeUserAverageAge() {
+function computeUserAverageAge(users) {
+  let ageSum = 0;
+  let avgAge = 0;
+  let roundedAvgAge = 0;
 
+  for(i=0; i < users.length; i++) {
+    ageSum += users[i].age;
+  }
+
+  if (!isNaN(ageSum) || (users.length !== 0)) { // empty array has size 0, empty structure in array has size 1 but NaN content
+    avgAge = ageSum / users.length;
+    roundedAvgAge = Math.round(avgAge);
+  }
+  return roundedAvgAge;
 }
 
 module.exports = {
