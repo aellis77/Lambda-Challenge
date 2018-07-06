@@ -25,22 +25,20 @@ function helloWorld() {
 */
 
 function lambdaSchool(num) {
-  let output = ' ';
 
   if (num > 0) { // positive integer
     if ((num % 3 === 0) && (num % 5 === 0))  {
-      output = 'Lambda School';
+      return 'Lambda School';
     } else if (num % 3 === 0) {
-      output = 'Lambda';
+      return 'Lambda';
     } else if (num % 5 === 0) {
-      output = 'School';
+      return 'School';
     } else {
-      output = String(num);
+      return num;
     }
   } else {
-    output = 'Not a valid input';
+    return 'Not a valid input';
   }
-  return output;
 }
 
 /*
@@ -55,7 +53,7 @@ function lambdaSchool(num) {
 */
 
 function longestString(strs) {
-  let longestStringInArray = ' ';
+  let longestStringInArray = '';
 
   // if one searchs for >, the first string at that length will be maintained
   for (let i=0; i < strs.length; i++) {
@@ -96,7 +94,7 @@ function computeUserAverageAge(users) {
     ageSum += users[i].age;
   }
 
-  if (!isNaN(ageSum) || (users.length !== 0)) { // empty array has size 0, empty structure in array has size 1 but NaN content
+  if (!isNaN(ageSum) && (users.length !== 0)) { // empty array has size 0, empty structure in array has size 1 but NaN content
     avgAge = ageSum / users.length;
     roundedAvgAge = Math.round(avgAge);
   }
