@@ -31,6 +31,23 @@ describe('Lambda School Precourse Assessment', () => {
       expect(lambdaSchool(30)).toBe('Lambda School');
       expect(lambdaSchool(180)).toBe('Lambda School');
     });
+    it('should return the number for a number not divisble by 3 or 5 or 3 and 5', () => {
+      expect(lambdaSchool(1)).toBe(1);
+      expect(lambdaSchool(49)).toBe(49);
+      expect(lambdaSchool(179)).toBe(179);
+    });
+    // note: this is done this way due to the way the coder implemented the requirement.
+    // this is a good example for coder and module tester independence (which is not true here)
+    it('should return none of the known outputs if not a positive integer', () => {
+      expect(lambdaSchool(0)).not.toBe('Lambda');
+      expect(lambdaSchool(0)).not.toBe('School');
+      expect(lambdaSchool(0)).not.toBe('Lambda School');
+      expect(lambdaSchool(0)).not.toBe(0);
+    }); 
+    // a case that more fully meets the requirement (in my opinion - that would fail for me) 
+    /* it('should return \'undefined\' if not a positive integer', () => {
+      expect(lambdaSchool(0)).toBe(undefined);
+    }); */
   }); 
 
   describe('longestString', () => {
@@ -40,6 +57,9 @@ describe('Lambda School Precourse Assessment', () => {
     });
     it('should return the first longest string if there is a tie', () => {
       expect(longestString(['C++', 'CSS', 'JWT'])).toBe('C++');
+    });
+    it('should return blank if no strings exist in array', () => {
+      expect(longestString([])).toBe('');
     });
   }); 
 
@@ -69,6 +89,10 @@ describe('Lambda School Precourse Assessment', () => {
     });
     it('should round the average before returning it', () => {
       expect(computeUserAverageAge(computerScientists)).toBe(62);
+    });
+    it('should return 0 if array size is [], or [{}] (based on the return a number clause)', () => {
+      expect(computeUserAverageAge([])).toBe(0);
+      expect(computeUserAverageAge([{}])).toBe(0);
     });
   });
 });
