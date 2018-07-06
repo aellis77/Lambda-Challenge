@@ -35,6 +35,7 @@ describe('Lambda School Precourse Assessment', () => {
       expect(lambdaSchool(1)).toBe(1);
       expect(lambdaSchool(49)).toBe(49);
       expect(lambdaSchool(179)).toBe(179);
+      expect(typeof lambdaSchool(1)).toBe('number');
     });
     // note: this is done this way due to the way the coder implemented the requirement.
     // this is a good example for coder and module tester independence (which is not true here)
@@ -45,9 +46,9 @@ describe('Lambda School Precourse Assessment', () => {
       expect(lambdaSchool(0)).not.toBe(0);
     }); 
     // a case that more fully meets the requirement (in my opinion - that would fail for me) 
-    /* it('should return \'undefined\' if not a positive integer', () => {
+     it('should return \'undefined\' if not a positive integer', () => {
       expect(lambdaSchool(0)).toBe(undefined);
-    }); */
+    }); 
   }); 
 
   describe('longestString', () => {
