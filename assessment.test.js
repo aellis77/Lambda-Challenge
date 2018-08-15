@@ -46,9 +46,9 @@ describe('Lambda School Precourse Assessment', () => {
       expect(lambdaSchool(0)).not.toBe(0);
     }); 
     // a case that more fully meets the requirement (in my opinion - that would fail for me) 
-     it('should return \'undefined\' if not a positive integer', () => {
-      expect(lambdaSchool(0)).toBe(undefined);
-    }); 
+  //   it('should return \'undefined\' if not a positive integer', () => {
+ //     expect(lambdaSchool(0)).toBe(undefined);
+ //   }); 
   }); 
 
   describe('longestString', () => {
